@@ -5,8 +5,8 @@ export CUDA_VISIBLE_DEVICES=0
 data_path=data/protein_ligand_enzyme_test.json
 
 local_root=models
-output_path=${local_root}/ProteinNet
-out_pdb_path=${local_root}/output/ProteinNet
+output_path=${local_root}/EnzyGen2
+out_pdb_path=${local_root}/output/EnzyGen2
 mkdir -p ${out_pdb_path}
 
 proteins=(10665 11698 9796 11706 573 11686 83332 11676 186497 273057 4081 510516 287 5116 36329 273063 11678 694009 93062 264203 2697049 9031 9606 83333 1280 562)

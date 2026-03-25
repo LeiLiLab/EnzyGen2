@@ -1,4 +1,4 @@
-<h1>ProteinNet Is a Large Generative Model for Ligand-Based Functional Protein Sequence and Structure Co-Design</h1>
+<h1>EnzyGen2 Is a Large Generative Model for Ligand-Based Functional Protein Sequence and Structure Co-Design</h1>
 
 <h2>Model Architecture</h2>
 
@@ -6,21 +6,21 @@ This repository contains code, data and model weights.
 
 The overall model architecture is shown below:
 
-![image](./ProteinNet_overall.png)
+![image](./EnzyGen2_overall.png)
 
 
 <h2>Environment</h2>
 The dependencies can be set up using the following commands:
 
 ```ruby
-conda env create -f proteinnet.yml
-conda activate proteinnet
+conda env create -f enzygen2.yml
+conda activate enzygen2
 bash setup.sh 
 ```
 
 <h2>Download Data</h2>
 
-We provide the pretraining, finetuning, and evaluation data at [ProteinNet_Data](https://drive.google.com/drive/folders/1rn5FolLZ2NlFmPDqnbUTJEYS7brCr-w9?usp=sharing) 
+We provide the pretraining, finetuning, and evaluation data at [EnzyGen2_Data](https://drive.google.com/drive/folders/1rn5FolLZ2NlFmPDqnbUTJEYS7brCr-w9?usp=sharing) 
  and NCBI taxonomy category ID to index dict at [NCBI_ID_Mapping_Dict](https://drive.google.com/file/d/1qe3T3-1z9L8h-e27O5i3Gsdak4A1AZG0/view?usp=sharing)
 
 Please download the dataset and put them in the data folder.
@@ -64,8 +64,8 @@ Please download the checkpoints and put them in the models folder.
 
 ```ruby
 mkdir models
-mkdir models/ProteinNet
-cd models/ProteinNet
+mkdir models/EnzyGen2
+cd models/EnzyGen2
 wget https://drive.google.com/file/d/1PZMKNDDTXZPofZX8Lu-QZ7OhYEwyHhWG/view?usp=sharing
 ```
 
@@ -102,19 +102,19 @@ If you want to pretrain or finetune your own model, please follow the training g
 If you want to pretrain a model with protein-ligand interaction constraint as introduced in our paper, please follow the script below. Our pretraining process involves three stages. First the model is pretrained only on the sequence prediction loss and structure reconstructure loss with 20% residues are masked and 80% are given:
 
 ```ruby
-bash train_ProteinNet_mlm.sh
+bash train_EnzyGen2_mlm.sh
 ```
 
 Then conditioned on the model pretrained in the first stage, the model continues to be trained on the sequence prediction loss and structure reconstructure loss with motifs are given:
 
 ```ruby
-bash train_ProteinNet_motif.sh
+bash train_EnzyGen2_motif.sh
 ```
 
 Finally conditioned on the model pretrained in the second satge, the model continues to be trained on the full losses, including the sequence prediction loss, structure reconstructure loss and protein-ligand interaction prediction loss:
 
 ```ruby
-bash train_ProteinNet_full.sh
+bash train_EnzyGen2_full.sh
 ```
 
 <h2>Finetuning</h2>
@@ -144,7 +144,7 @@ bash reah_TPMT_finetune.sh
 To design proteins of the 10 largest enzymes in our test set using the pretrained model, please use the following scripts:
 
 ```ruby
-bash generate_proteinnet_pretrain.sh
+bash generate_enzygen2_pretrain.sh
 ```
 
 There are six items in the output directory:
@@ -210,7 +210,7 @@ The format for ESP evaluation is (Protein_Sequence Substrate_Representation) for
 
 The evaluation code for ESP score is developed by Alexander Kroll, which can be found at [link](https://github.com/AlexanderKroll/ESP_prediction_function/tree/main)
 
-<h3>Expected Results for the Pretrained ProteinNet</h3>
+<h3>Expected Results for the Pretrained EnzyGen2</h3>
 
 ![image](./Full_In_Silico_Results_v6.png)
 

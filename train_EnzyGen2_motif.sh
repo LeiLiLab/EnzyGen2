@@ -6,18 +6,20 @@ data_path=data/pdb_swissprot_data_ligand.json
 
 local_root=models
 pretrained_model="esm2_t33_650M_UR50D"
-output_path=$local_root/ProteinNet_MLM
+save_path=${local_root}/EnzyGen2_MLM
+output_path=${local_root}/EnzyGen2_motif
 mkdir ${output_path}
 
 python3 fairseq_cli/train.py ${data_path} \
 --profile \
 --num-workers 0 \
 --distributed-world-size 8 \
+--finetune-from-model ${save_path}/checkpoint_best.pt \
 --save-dir ${output_path} \
 --task geometric_protein_design \
 --dataset-impl-source "raw" \
 --dataset-impl-target "coor" \
---data-stage "pretraining-mlm" \
+--data-stage "pretraining-motif" \
 --criterion geometric_protein_ncbi_loss --encoder-factor 1.0 --decoder-factor 1e-2 \
 --arch geometric_protein_model_ncbi_esm \
 --encoder-embed-dim 1280 \

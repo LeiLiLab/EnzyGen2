@@ -1,4 +1,4 @@
-name: proteinnet
+name: enzygen2
 channels:
   - pytorch
   - nvidia

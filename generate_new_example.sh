@@ -5,8 +5,8 @@ export CUDA_VISIBLE_DEVICES=0
 data_path=example/example.json
 
 local_root=models
-output_path=${local_root}/ProteinNet
-out_pdb_path=${local_root}/output/ProteinNet
+output_path=${local_root}/EnzyGen2
+out_pdb_path=${local_root}/output/EnzyGen2
 mkdir -p ${out_pdb_path}
 
 proteins=(83332)

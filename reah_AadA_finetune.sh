@@ -7,7 +7,7 @@ reaction="20245"
 
 local_root=models
 pretrained_model="esm2_t33_650M_UR50D"
-save_path=${local_root}/ProteinNet
+save_path=${local_root}/EnzyGen2
 output_path=${local_root}/rhea_20245_finetune
 rm -rf ${output_path}
 mkdir ${output_path}
