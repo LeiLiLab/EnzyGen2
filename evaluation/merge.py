@@ -1,7 +1,7 @@
 import os 
 
 ncbis = "10665 11698 9796 11706 573 11686 83332 11676 186497 273057 4081 510516 287 5116 36329 273063 11678 694009 93062 264203 2697049 9031 9606 83333 1280 562".split()
-data_path = "models/output/ProteinNet"
+data_path = "models/output/EnzyGen2"
 target_path = os.path.join(data_path, 'pretrain')
 os.system(f"mkdir -p {target_path}")
 os.system(f"mkdir -p {target_path}/pred_pdbs")

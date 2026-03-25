@@ -17,7 +17,7 @@ ec2smiles = {"2.7.7.7": "C00677",
 pdb2ec = json.load(open("data/protein_ligand_enzyme_test_pdb2ec.json"))
 
 # generation path
-data_path = "models/output/ProteinNet/pretrain"
+data_path = "models/output/EnzyGen2/pretrain"
 
 pdbs = open(os.path.join(data_path, "pdb.txt")).readlines()
 proteins = open(os.path.join(data_path, "protein.txt")).readlines()
