@@ -20,8 +20,7 @@ bash setup.sh
 
 <h2>Download Data</h2>
 
-We provide the pretraining, finetuning, and evaluation data at [EnzyGen2_Data](https://drive.google.com/drive/folders/1rn5FolLZ2NlFmPDqnbUTJEYS7brCr-w9?usp=sharing) 
- and NCBI taxonomy category ID to index dict at [NCBI_ID_Mapping_Dict](https://drive.google.com/file/d/1qe3T3-1z9L8h-e27O5i3Gsdak4A1AZG0/view?usp=sharing)
+We provide the pretraining, finetuning, and evaluation data at [EnzyGen2_Dataset](https://doi.org/10.5281/zenodo.19264491).
 
 Please download the dataset and put them in the data folder.
 
@@ -30,27 +29,28 @@ First if you want to pretrain your own model, please download the pretraining da
 ```angular2html
 mkdir data 
 cd data 
-wget https://drive.google.com/file/d/1ROcJTMfBIXlS1iUIqSE5Dtww1OC2GHYt/view?usp=sharing
+download pdb_swissprot_data_ligand.json.tar.gz
 ```
 
 Then if you want to finetune your own model, please download the finetuning data:
 
 ```angular2html
-wget https://drive.google.com/file/d/1dGzW1D95G86HU02UytDmw9XHGbyQMlpm/view?usp=drive_link
-wget https://drive.google.com/file/d/1N2Z7-YhSFiO6-Ef7ytr3y7wy_SxgMMUj/view?usp=sharing
-wget https://drive.google.com/file/d/1AQDFDT0Ps3_SbKivAAvjyzCCuDmfosjl/view?usp=sharing
+download chloramphenicol_acetyltransferase_final.json
+download aminoglycoside_adenylyltransferase_final.json
+download thiopurine_methyltransferase_final.json
 ```
 
 Then please download the NCBI taxonomy id mapping dict which is necessary for running the code:
 
 ```angular2html
-wget https://drive.google.com/file/d/1qe3T3-1z9L8h-e27O5i3Gsdak4A1AZG0/view?usp=sharing
+download ncbi2id.json
 ```
 
 Then please download the evaluation data:
 
 ```angular2html
-wget https://drive.google.com/file/d/1g5lI2jFKPe1m6U8eu4Onsw7mRkFAA4IT/view?usp=sharing
+download protein_ligand_enzyme_test.json
+download protein_ligand_enzyme_test_pdb2ec.json
 ```
 
 <h2>Download Model</h2>
