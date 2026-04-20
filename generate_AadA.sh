@@ -14,6 +14,7 @@ mkdir -p ${generation_path}
 mkdir -p ${generation_path}/tgt_pdbs
 mkdir -p ${generation_path}/pred_pdbs
 
+
 python3 fairseq_cli/generate.py ${data_path} \
 --task geometric_protein_design \
 --protein-task ${enzyme} \
