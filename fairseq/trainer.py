@@ -4,7 +4,7 @@
 # LICENSE file in the root directory of this source tree.
 
 """
-Train a network across multiple GPUs.
+Trainer file
 """
 
 import contextlib
